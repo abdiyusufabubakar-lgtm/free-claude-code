@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "free-claude-code"
+version = "0.1.0"
+description = "A free AI coding CLI and runtime for routing requests through provider backends."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "abdiyusufabubakar-lgtm" }]
+license = { text = "MIT" }
+keywords = ["claude", "ai", "coding", "cli", "provider", "routing"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Software Development :: Libraries",
+]
+
+dependencies = [
+  "uvicorn>=0.30.0",
+  "loguru>=0.7.0",
+  "pytest>=8.0.0",
+]
+
+[project.scripts]
+fcc = "free_claude_code.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
